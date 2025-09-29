@@ -57,3 +57,13 @@ void AggiungiContatto(struct Contatto rubrica[], int nContatti){
     printf("Il contatto è stato aggiunto alla rubrica\n");
 
 }
+Void VisualizzaContatto(struct Contatto rubrica[], int nContatti) {
+    if (nContatti == 0) {
+        printf("la rubrica è vuota, inserire un contatto per poterli visualizzare\n");
+    }
+    for (int i = 0; i < nContatti; i++) {
+        printf("nome: %s\n", rubrica[i].nome);
+        printf("cognome: %s\n", rubrica[i].cognome);
+        printf("telefono: %s\n", rubrica[i].telefono);
+    }
+}
