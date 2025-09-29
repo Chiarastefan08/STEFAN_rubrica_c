@@ -42,3 +42,18 @@ int main(void) {
     return 0;
 }
 
+void AggiungiContatto(struct Contatto rubrica[], int nContatti){
+    if (nContatto >= 100) {
+        printf("spazio in rubrica pieno\n");
+    }
+    printf("inserisci il nome del contatto:\n");
+    scanf("%29s", rubrica[nContatti].nome);
+    printf("inserisci il cognome del contatto:\n");
+    scanf("%29s", rubrica[nContatti].cognome);
+    printf("inserisci il numero di telefono del contatto:\n");
+    scanf("%14s", rubrica[nContatti].telefono);
+
+    nContatti++;
+    printf("Il contatto è stato aggiunto alla rubrica\n");
+
+}
