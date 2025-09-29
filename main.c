@@ -57,7 +57,7 @@ void AggiungiContatto(struct Contatto rubrica[], int nContatti){
     printf("Il contatto è stato aggiunto alla rubrica\n");
 
 }
-Void VisualizzaContatto(struct Contatto rubrica[], int nContatti) {
+void VisualizzaContatto(struct Contatto rubrica[], int nContatti) {
     if (nContatti == 0) {
         printf("la rubrica è vuota, inserire un contatto per poterli visualizzare\n");
     }
@@ -65,5 +65,22 @@ Void VisualizzaContatto(struct Contatto rubrica[], int nContatti) {
         printf("nome: %s\n", rubrica[i].nome);
         printf("cognome: %s\n", rubrica[i].cognome);
         printf("telefono: %s\n", rubrica[i].telefono);
+    }
+}
+void CercaContatto(struct Contatto rubrica[], int nContatti) {
+    char CognomeDaCercare [30];
+    printf("Inserisci il cognome da cercare");
+    scanf("%29s", &CognomeDaCercare);
+
+    for (int i = 0; i < nContatti; i++) {
+        if (rubrica[i].cognome == CognomeDaCercare) {
+            printf("Contatto trovato");
+            printf("nome: %s\n", rubrica[i].nome);
+            printf("cognome: %s\n", rubrica[i].cognome);
+            printf("telefono: %s\n", rubrica[i].telefono);
+        }
+        else {
+            printf("Il contatto non è presente all'interno della rubrica");
+        }
     }
 }
