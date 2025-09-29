@@ -14,7 +14,7 @@ void EliminaContatto(struct Contatto rubrica[], int nContatti);
 int main(void) {
     struct Contatto rubrica[100];
     int nContatti = 0;
-    int scelta
+    int scelta;
 
     do {
         printf("\n -----RUBRICA-----\n");
@@ -43,7 +43,7 @@ int main(void) {
 }
 
 void AggiungiContatto(struct Contatto rubrica[], int nContatti){
-    if (nContatto >= 100) {
+    if (nContatti >= 100) {
         printf("spazio in rubrica pieno\n");
     }
     printf("inserisci il nome del contatto:\n");
@@ -81,6 +81,24 @@ void CercaContatto(struct Contatto rubrica[], int nContatti) {
         }
         else {
             printf("Il contatto non è presente all'interno della rubrica");
+        }
+    }
+}
+void EliminaContatto (struct Contatto rubrica[], int nContatti) {
+    char CognomeDaEliminare [30];
+    printf("Inserisci il cognome del contatto da eliminare");
+    scanf("%29s", &CognomeDaEliminare);
+
+    for (int i = 0; i < nContatti; i++) {
+        if (rubrica[i].cognome == CognomeDaEliminare) {
+            rubrica[i].nome[0] = '\0';
+            rubrica[i].cognome[0] = '\0';
+            rubrica[i].telefono[0] = '\0';
+            nContatti--;
+            printf("contatto eliminato");
+        }
+        else {
+            printf("questo contatto no è presente all'interno della rubrica");
         }
     }
 }
